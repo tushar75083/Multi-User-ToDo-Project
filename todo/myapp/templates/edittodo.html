@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <form action="" method="post"  class="shadow-lg p-3 mt-4">
+                {% csrf_token %}
+        
+                <h1 class="text-center alert alert-info">Update ToDo</h1>
+                <hr>
+        
+                {% for fm in form %}
+       
+                    {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br>
+                    
+                {% endfor %}
+                <input type="submit" value="Update" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+   </div>
+{% endblock content %}
